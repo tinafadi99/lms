@@ -30,12 +30,12 @@ const students = [
 
 ///postcourse
 app.get('/', (req, res) => {
-    res.send('Helo Word!!!!');
+    res.send('Hello Word!!!!');
 });
 app.get('/api/courses', (req, res) => {
     res.send(courses);
 });
-app.post('/api/courses', (req, res) => {
+app.post('/api/courses/create', (req, res) => {
     const course = {
         id: courses.length + 1,
         name: req.body.name,
@@ -48,9 +48,9 @@ app.post('/api/courses', (req, res) => {
 
 //poststudent
 app.get('/', (req, res) => {
-    res.send('Helo Word!!!!');
+    res.send('Hello Word!!!!');
 });
-app.get('/api/students/create', (req, res) => {
+app.get('/api/students', (req, res) => {
     res.send(students);
 });
 app.post('/api/students/create', (req, res) => {
