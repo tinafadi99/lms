@@ -1,15 +1,12 @@
-const Joi = require('joi');
-const express = require('express');
-const app = express();
+const Joi=require('joi');
+const express=require('express');
+const app=express();
 app.use(express.json());
 const router = express.Router();
 var fs = require('fs');
 var http = require('http');
 var url = require('url');
-const { resolveSoa } = require('dns');
-const path = require("path")
-
-var bodyParser = require('body-parser');
+var bodyParser =require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
 
 // data
@@ -29,12 +26,12 @@ const students = [
 
 
 ///postcourse
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.send('Hello Word!!!!');
 });
 app.get('/api/courses', (req, res) => {
     res.send(courses);
-});
+}); */
 app.post('/api/courses/create', (req, res) => {
     const course = {
         id: courses.length + 1,
@@ -47,12 +44,12 @@ app.post('/api/courses/create', (req, res) => {
 });
 
 //poststudent
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.send('Hello Word!!!!');
 });
 app.get('/api/students', (req, res) => {
     res.send(students);
-});
+}); */
 app.post('/api/students/create', (req, res) => {
     const student = {
         id: students.length + 1,
