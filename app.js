@@ -47,10 +47,10 @@ app.post('/api/courses', (req, res) => {
 app.get('/', (req, res) => {
     res.send('Helo Word!!!!');
 });
-app.get('/api/students', (req, res) => {
+app.get('/api/students/create', (req, res) => {
     res.send(students);
 });
-app.post('/api/students', (req, res) => {
+app.post('/api/students/create', (req, res) => {
     const student = {
         id: students.length + 1,
         name: req.body.name,
@@ -221,6 +221,18 @@ app.put('/api/students', (req, res) => {
     student.code = req.body.code;
     res.send(student);
 });
+
+app.get('/web/courses/create',(req,res) =>{
+    res.sendFile(__dirname+"/course.html")
+})
+
+app.get('/web/students/create',(req,res) =>{
+    res.sendFile(__dirname+"/student.html")
+})
+
+app.get('/',(req,res) =>{
+    res.send('Welcome');
+})
 
 const port = 57754;
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
