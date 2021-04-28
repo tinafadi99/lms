@@ -1,25 +1,19 @@
-<div class="container">
-    <hr>
-    <h1>Create New Course</h1>
-    <hr>
+<h3>Add Course</h3>
 
-    <form action="http://localhost:57754/api/courses" method="POST">
-        <div class="form-group">
-            <label for="NAME">NAME</label>
-            <input class="form-control" name="name">
-        </div>
+<div>
+  <form action="/api/courses/create" method="POST">
 
-        <div class="form-group">
-            <label for="CODE">CODE</label>
-            <input class="form-control" name="code">
-        </div>
+    <label for="name">Course Name</label>
+    <input type="text" id="fname" name="name" placeholder="Course Name..">
 
-        <div class="form-group">
-            <label for="DESCRIPTION">DESCRIPTION</label>
-            <input class="form-control" name="description">
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <label for="code">Course Code</label>
+    <input type="text" id="lname" name="code" placeholder="code..">
+    
+    <label for="description">Course description</label>
+    <input type="text" id="desc" name="description" placeholder="description..">
+    <input type="submit" value="Submit">
+  </form>
 </div>
+
+</body>
+</html>
