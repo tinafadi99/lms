@@ -9,6 +9,9 @@ var url = require('url');
 const { resolveSoa } = require('dns');
 const path = require("path")
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended:true}));
+
 // data
 const courses = [
     { id: 1, name: "course1", code: "CSE765", description: "mainstream course" },
